@@ -11,17 +11,27 @@ struct StatusView: View {
     @State var statusComponents = StatusComponents(components: [])
     
     var body: some View {
-        VStack(alignment: .leading) {
+        List {
+            Text("Status of GitHub")
+                .font(.title)
             ForEach(statusComponents.components) { item in
                 if item.name != "Visit www.githubstatus.com for more information" {
-                    Text("\(item.name): ") +
-                    Text("\(item.status.capitalized)")
+                    HStack {
+                        Image(systemName: item.status == "operational" ? "checkmark.circle.fill" : "circle.fill")
+                            .foregroundColor(item.status == "operational" ? .green : .red)
+                            .imageScale(.large)
+                        VStack(alignment: .leading) {
+                            Text("\(item.name): ")
+                            Text("\(item.status.capitalized)")
+                        }.font(.title3)
+                        
+                    }
                 }
             }
             Spacer()
         }
-        .frame(width: 225, height: 225)
-            .padding()
+        .frame(width: 225, height: 500)
+        .padding()
         .onAppear {
             Task { @MainActor in
                 do {
@@ -39,8 +49,6 @@ struct StatusView: View {
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
-//        let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-        
         if let components = try? JSONDecoder().decode(StatusComponents.self, from: data) {
             print(components.components)
             return components

@@ -14,7 +14,7 @@ class ApplicationMenu: NSObject {
     func createMenu() -> NSMenu {
         let statusView = StatusView()
         let menuView = NSHostingController(rootView: statusView)
-        menuView.view.frame.size = CGSize(width: 225, height: 225)
+        menuView.view.frame.size = CGSize(width: 225, height: 500)
         
         let menuItem = NSMenuItem()
         menuItem.view = menuView.view
