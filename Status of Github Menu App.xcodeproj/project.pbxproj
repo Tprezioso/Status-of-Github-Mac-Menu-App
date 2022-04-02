@@ -8,18 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		557BDE7727F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE7627F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift */; };
-		557BDE7927F7A53D005847FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE7827F7A53D005847FD /* ContentView.swift */; };
+		557BDE7927F7A53D005847FD /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE7827F7A53D005847FD /* StatusView.swift */; };
 		557BDE7B27F7A53D005847FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557BDE7A27F7A53D005847FD /* Assets.xcassets */; };
 		557BDE7E27F7A53D005847FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557BDE7D27F7A53D005847FD /* Preview Assets.xcassets */; };
+		557BDE8627F7AE82005847FD /* StatusComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE8527F7AE82005847FD /* StatusComponent.swift */; };
+		557BDE8827F7AEE1005847FD /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE8727F7AEE1005847FD /* HelperMethods.swift */; };
+		557BDE8A27F7EA29005847FD /* ApplicationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE8927F7EA29005847FD /* ApplicationMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		557BDE7327F7A53D005847FD /* Status of Github Menu App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Status of Github Menu App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		557BDE7627F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status_of_Github_Menu_AppApp.swift; sourceTree = "<group>"; };
-		557BDE7827F7A53D005847FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		557BDE7827F7A53D005847FD /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		557BDE7A27F7A53D005847FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		557BDE7D27F7A53D005847FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		557BDE7F27F7A53D005847FD /* Status_of_Github_Menu_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Status_of_Github_Menu_App.entitlements; sourceTree = "<group>"; };
+		557BDE8527F7AE82005847FD /* StatusComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusComponent.swift; sourceTree = "<group>"; };
+		557BDE8727F7AEE1005847FD /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
+		557BDE8927F7EA29005847FD /* ApplicationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				557BDE7627F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift */,
-				557BDE7827F7A53D005847FD /* ContentView.swift */,
+				557BDE7827F7A53D005847FD /* StatusView.swift */,
+				557BDE8927F7EA29005847FD /* ApplicationMenu.swift */,
+				557BDE8527F7AE82005847FD /* StatusComponent.swift */,
+				557BDE8727F7AEE1005847FD /* HelperMethods.swift */,
 				557BDE7A27F7A53D005847FD /* Assets.xcassets */,
 				557BDE7F27F7A53D005847FD /* Status_of_Github_Menu_App.entitlements */,
 				557BDE7C27F7A53D005847FD /* Preview Content */,
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				557BDE7927F7A53D005847FD /* ContentView.swift in Sources */,
+				557BDE7927F7A53D005847FD /* StatusView.swift in Sources */,
+				557BDE8A27F7EA29005847FD /* ApplicationMenu.swift in Sources */,
 				557BDE7727F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift in Sources */,
+				557BDE8827F7AEE1005847FD /* HelperMethods.swift in Sources */,
+				557BDE8627F7AE82005847FD /* StatusComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

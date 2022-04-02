@@ -7,9 +7,13 @@
 
 import Foundation
 
-struct StatusComponents: Identifiable, Decodable {
-    var id = UUID()
+struct StatusComponent: Identifiable, Codable {
+    var id: String
     var name: String
     var status: String
 
+}
+
+struct StatusComponents: Codable {
+    var components: [StatusComponent]
 }
