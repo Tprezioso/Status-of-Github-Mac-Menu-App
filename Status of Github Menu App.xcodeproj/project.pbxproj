@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5512CFF427F8EA3B006008BF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5512CFF327F8EA3B006008BF /* Credits.rtf */; };
 		557BDE7727F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE7627F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift */; };
 		557BDE7927F7A53D005847FD /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BDE7827F7A53D005847FD /* StatusView.swift */; };
 		557BDE7B27F7A53D005847FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557BDE7A27F7A53D005847FD /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5512CFF227F8E607006008BF /* Status-of-Github-Menu-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Status-of-Github-Menu-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5512CFF327F8EA3B006008BF /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		557BDE7327F7A53D005847FD /* Status of Github Menu App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Status of Github Menu App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		557BDE7627F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status_of_Github_Menu_AppApp.swift; sourceTree = "<group>"; };
 		557BDE7827F7A53D005847FD /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -82,11 +85,13 @@
 		557BDE7527F7A53D005847FD /* Status of Github Menu App */ = {
 			isa = PBXGroup;
 			children = (
+				5512CFF227F8E607006008BF /* Status-of-Github-Menu-App-Info.plist */,
 				557BDE7627F7A53D005847FD /* Status_of_Github_Menu_AppApp.swift */,
 				5512CFEF27F88BED006008BF /* Screens */,
 				5512CFF127F88C2C006008BF /* Views */,
 				5512CFF027F88BF9006008BF /* Model */,
 				557BDE8727F7AEE1005847FD /* HelperMethods.swift */,
+				5512CFF327F8EA3B006008BF /* Credits.rtf */,
 				557BDE7A27F7A53D005847FD /* Assets.xcassets */,
 				557BDE7F27F7A53D005847FD /* Status_of_Github_Menu_App.entitlements */,
 				557BDE7C27F7A53D005847FD /* Preview Content */,
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				557BDE7E27F7A53D005847FD /* Preview Assets.xcassets in Resources */,
+				5512CFF427F8EA3B006008BF /* Credits.rtf in Resources */,
 				557BDE7B27F7A53D005847FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +316,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Status-of-Github-Menu-App-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,6 +344,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Status-of-Github-Menu-App-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

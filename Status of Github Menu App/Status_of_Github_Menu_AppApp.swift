@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.instance = self
-        statusBarItem.button?.image = NSImage(named: NSImage.Name("git-branch"))
+        statusBarItem.button?.image = NSImage(named: NSImage.Name("octocat"))
         statusBarItem.button?.imagePosition = .imageLeading
         statusBarItem.menu = menu.createMenu()
     }

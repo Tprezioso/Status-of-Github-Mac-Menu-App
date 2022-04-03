@@ -20,6 +20,33 @@ class ApplicationMenu: NSObject {
         menuItem.view = menuView.view
         menu.addItem(menuItem)
         
+        let aboutMenuItem = NSMenuItem(title: "About Status of GitHub", action: #selector(about), keyEquivalent: "")
+        aboutMenuItem.target = self
+        menu.addItem(aboutMenuItem)
+        
+        let webLinkMenuItem = NSMenuItem(title: "githubstatus.com", action: #selector(openLink), keyEquivalent: "")
+        webLinkMenuItem.target = self
+        webLinkMenuItem.representedObject = "https://www.githubstatus.com"
+        menu.addItem(webLinkMenuItem)
+        
+        let quitMenuItem = NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q")
+        quitMenuItem.target = self
+        menu.addItem(quitMenuItem)
+        
         return menu
+    }
+    
+    @objc func about(sender: NSMenuItem) {
+        NSApp.orderFrontStandardAboutPanel()
+    }
+    
+    @objc func openLink(sender: NSMenuItem) {
+        let link = sender.representedObject as! String
+        guard let url = URL(string: link) else { return }
+        NSWorkspace.shared.open(url)
+    }
+    
+    @objc func quit(sender: NSMenuItem) {
+        NSApp.terminate(self)
     }
 }
