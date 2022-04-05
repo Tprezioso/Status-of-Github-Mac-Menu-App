@@ -8,37 +8,71 @@
 import SwiftUI
 
 struct StatusView: View {
-    @State var statusComponents = StatusComponents(components: [])
+    @StateObject var stateModel = StatusViewStateModel()
     
     var body: some View {
-        List {
-            Text("Status of GitHub")
-                .font(.title)
-            ForEach(statusComponents.components) { item in
-                if item.name != "Visit www.githubstatus.com for more information" {
-                    HStack {
-                        Image(systemName: item.status == "operational" ? "checkmark.circle.fill" : "circle.fill")
-                            .foregroundColor(item.status == "operational" ? .green : .red)
-                            .imageScale(.large)
-                        VStack(alignment: .leading) {
-                            Text("\(item.name): ")
-                            Text("\(item.status.capitalized)")
-                        }.font(.title3)
-                        
+        ZStack {
+            if stateModel.error {
+                VStack {
+                    Text("Something went wrong!")
+                    Button("Relaod") {
+                        Task {
+                            await stateModel.fetchData()
+                        }
+                    }
+                }
+            } else {
+                List {
+                    Text("Status of GitHub")
+                        .font(.title)
+                    ForEach(stateModel.status.components) { item in
+                        if item.name != "Visit www.githubstatus.com for more information" {
+                            HStack {
+                                Image(systemName: item.status == "operational" ? "checkmark.circle.fill" : "circle.fill")
+                                    .foregroundColor(item.status == "operational" ? .green : .red)
+                                    .imageScale(.large)
+                                VStack(alignment: .leading) {
+                                    Text("\(item.name): ")
+                                    Text("\(item.status.capitalized)")
+                                }.font(.title3)
+                                
+                            }
+                        }
+                    }
+                    Spacer()
+                }
+                .frame(width: 225, height: 500)
+                .padding()
+                .onAppear {
+                    Task {
+                        await stateModel.fetchData()
                     }
                 }
             }
-            Spacer()
+            
+            if stateModel.loading {
+                ProgressView()
+            }
         }
-        .frame(width: 225, height: 500)
-        .padding()
-        .onAppear {
-            Task { @MainActor in
-                do {
-                    self.statusComponents = try await getStatus()
-                } catch {
-                    print(error)
-                }
+    }
+}
+
+class StatusViewStateModel: ObservableObject {
+    @Published var status = StatusComponents(components: [])
+    @Published var loading = false
+    @Published var error = false
+    
+    func fetchData() async {
+        Task { @MainActor in
+            loading = true
+            do {
+                status = try await getStatus()
+                loading = false
+                self.error = false
+            } catch {
+                print(error)
+                self.error = true
+                loading = false
             }
         }
     }
