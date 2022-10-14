@@ -33,14 +33,14 @@ struct StatusView: View {
                                     .imageScale(.large)
                                 VStack(alignment: .leading) {
                                     Text("\(item.name): ")
-                                    Text("\(item.status.capitalized)")
+                                    Text("\(item.status.capitalized.replacingOccurrences(of: "_", with: " "))")
                                 }.font(.title3)
                                 
                             }
                         }
                     }
                     Spacer()
-                }
+                }.listStyle(.sidebar)
                 .frame(width: 225, height: 500)
                 .padding()
                 .onAppear {
